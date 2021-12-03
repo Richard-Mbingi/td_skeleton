@@ -1,10 +1,10 @@
 import { useMoralis } from "react-moralis";
 import { Link, Route, Routes } from "react-router-dom";
-import { Home, Profile} from "./components/";
 import { SignIn, SignUp, Landing } from "./pages/";
+import Dashboard from "./supplier/Dashboard";
 
 function App() {
-  const { isAuthenticated, logout } = useMoralis();
+  const { isAuthenticated} = useMoralis();
 
   return (
     <>
@@ -20,29 +20,7 @@ function App() {
           </Routes>
         </div>
       ) : (
-        <div>
-          <div>
-            {isAuthenticated && (
-              <>
-                <Link to="/home">Home</Link>
-                <Link to="/profile">Profile</Link>
-                <button onClick={() => logout()}>Sign Out</button>
-              </>
-            )}
-          </div>
-          <div>
-            {isAuthenticated ? (
-              <Routes>
-                <Route path="/home" element={<Home />} />
-                <Route path="/profile" element={<Profile />} />
-              </Routes>
-            ) : (
-              <>
-                <Home />
-              </>
-            )}
-          </div>
-        </div>
+        <Dashboard/>
       )}
     </>
   );
