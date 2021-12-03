@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useMoralis } from "react-moralis";
-import Error from "./Error";
 
 const Profile = () => {
   const { user, setUserData, userError } = useMoralis();
@@ -36,9 +35,12 @@ const Profile = () => {
         value={password}
         onChange={(event) => setPassword(event.currentTarget.value)}
       />
-      <button onClick={handleSave} >Save</button>
+      <button onClick={handleSave}>Save</button>
       {userError && (
-        <Error title="User change failed" message={userError.message} />
+        <div>
+          <h1>User change failed</h1>
+          <p>{userError.message} </p>
+        </div>
       )}
     </div>
   );

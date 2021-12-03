@@ -1,11 +1,7 @@
-import Auth from "./Auth";
 import { useMoralis } from "react-moralis";
-import { Link, Navigate, Route, Routes } from "react-router-dom";
-import Landing from "./Landing";
-import Home from "./Home";
-import Profile from "./Profile";
-import SignUp from "./SignUp";
-import SignIn from "./SignIn";
+import { Link, Route, Routes } from "react-router-dom";
+import { Home, Profile} from "./components/";
+import { SignIn, SignUp, Landing } from "./pages/";
 
 function App() {
   const { isAuthenticated, logout } = useMoralis();
