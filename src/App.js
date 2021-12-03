@@ -1,6 +1,6 @@
 import { useMoralis } from "react-moralis";
 import { Link, Route, Routes } from "react-router-dom";
-import { SignIn, SignUp, Landing } from "./pages/";
+import { SignIn, SignUp, Landing } from "./authentication/pages";
 import Dashboard from "./supplier/Dashboard";
 
 function App() {
