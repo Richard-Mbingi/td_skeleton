@@ -1,5 +1,4 @@
 import React from "react";
-import { tenderDetails } from "../data/tender-details";
 
 const Discover = () => {
 

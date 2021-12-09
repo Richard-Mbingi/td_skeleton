@@ -1,5 +1,5 @@
 import React from "react";
-import Moralis from "moralis";
+import { Link } from "react-router-dom";
 import { useMoralis } from "react-moralis";
 
 const Home = () => {
@@ -10,6 +10,7 @@ const Home = () => {
         Welcome to the Twitter Clone,
         {user ? user.attributes.username : "Authenticate Please 🙏"}
       </h1>
+      <Link to="/register-info">Register your Info</Link>
     </>
   );
 };
