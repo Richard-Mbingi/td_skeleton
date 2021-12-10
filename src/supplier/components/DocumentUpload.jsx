@@ -1,14 +1,10 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useParams } from "react-router";
 
 const DocumentUpload = (props) => {
-  return (
-    <>
-      <NavLink to={`/register-info/${props.documentLink}`}>
-        <h3>{props.documentName}</h3>
-      </NavLink>
-    </>
-  );
+  const { documentUpload } = useParams();
+  
+  return <h1>{documentUpload}</h1>;
 };
 
 export default DocumentUpload;

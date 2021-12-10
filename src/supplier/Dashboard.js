@@ -1,6 +1,7 @@
 import React from "react";
 import { useMoralis } from "react-moralis";
 import { Route, Routes } from "react-router-dom";
+import DocumentUpload from "./components/DocumentUpload";
 import PageTab from "./components/PageTab";
 import {
   Home,
@@ -12,8 +13,6 @@ import {
   ClosedTenders,
   Financials,
   RegisterInfo,
-  Document1,
-  Document2,
   DiscoverTender,
   OpenTender
 } from "./pages";
@@ -43,8 +42,7 @@ const Dashboard = () => {
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/register-info" element={<RegisterInfo />}>
-              <Route path="document-1" element={<Document1 />} />
-              <Route path="document-2" element={<Document2 />} />
+              <Route path=":documentUpload" element={<DocumentUpload/>}/>
             </Route>
             <Route path="/discover" element={<Discover />} />
             <Route path="/discover/:discoverId" element={<DiscoverTender />} />

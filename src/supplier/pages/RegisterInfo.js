@@ -1,15 +1,22 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
-import DocumentUpload from "../components/DocumentUpload";
+import { NavLink, Outlet } from "react-router-dom";
+import { companyInfoDetails } from "../data/company-info-details";
 
 const RegisterInfo = () => {
   return (
     <div>
       <h1>Register User Info</h1>
       <p>Upload your document</p>
-      <DocumentUpload documentName="Document 1" documentLink="document-1"/>
-      <DocumentUpload documentName="Document 2" documentLink="document-2"/>
-      <Outlet />
+      <div>
+        {companyInfoDetails.map((_document) => (
+          <>
+            <li>
+              <NavLink to={`/register-info/${_document}`}>{_document}</NavLink>
+            </li>
+          </>
+        ))}
+        <Outlet />
+      </div>
       <button>Upload</button>
     </div>
   );
