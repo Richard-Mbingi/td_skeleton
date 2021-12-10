@@ -14,6 +14,8 @@ import {
   RegisterInfo,
   Document1,
   Document2,
+  DiscoverTender,
+  OpenTender
 } from "./pages";
 
 const Dashboard = () => {
@@ -45,8 +47,10 @@ const Dashboard = () => {
               <Route path="document-2" element={<Document2 />} />
             </Route>
             <Route path="/discover" element={<Discover />} />
+            <Route path="/discover/:discoverId" element={<DiscoverTender />} />
             <Route path="/prequalification" element={<Prequalification />} />
             <Route path="/open-tenders" element={<OpenTenders />} />
+            <Route path="/open-tenders/:openTenderId" element={<OpenTender />} />
             <Route path="/post-qualification" element={<PostQualification />} />
             <Route path="/closed-tenders" element={<ClosedTenders />} />
             <Route path="/financials" element={<Financials />} />
